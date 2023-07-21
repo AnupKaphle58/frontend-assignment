@@ -1,5 +1,6 @@
 'use-client'
 
+import { Link } from 'lucide-react';
 
 interface ProductCardProps{
         id: number;

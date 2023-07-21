@@ -1,6 +1,5 @@
 'use-client'
 
-import { useRouter } from 'next/navigation'
 
 interface ProductCardProps{
         id: number;
@@ -15,7 +14,8 @@ const ProductCard: React.FC<ProductCardProps> =({id, title, price, images, categ
     const router = useRouter();
 
     return(
-            <div onClick={()=> router.push(`/product/${id}`)} className="relative m-10 flex w-full max-w-xs flex-col h-[400px] overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md cursor-pointer">
+        <Link href={`/product/${id}`}>
+            <div className="relative m-10 flex w-full max-w-xs flex-col h-[400px] overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-md cursor-pointer">
                 <div className='relative mx-3 mt-3 flex h-60 overflow-hidden'>
                     <img className="object-cover max-h-[300px] w-full rounded-lg border border-gray-400" src={images[0]} alt={title} />
                 </div>
@@ -30,6 +30,7 @@ const ProductCard: React.FC<ProductCardProps> =({id, title, price, images, categ
                     </div>
                 </div>
             </div>
+        </Link>
     )
 }
 

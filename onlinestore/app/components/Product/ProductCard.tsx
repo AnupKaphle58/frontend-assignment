@@ -12,7 +12,6 @@ interface ProductCardProps{
 }
 
 const ProductCard: React.FC<ProductCardProps> =({id, title, price, images, category, rating}) => {
-    const router = useRouter();
 
     return(
         <Link href={`/product/${id}`}>

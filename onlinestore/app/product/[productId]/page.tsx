@@ -1,6 +1,17 @@
 "use client"
 
-export default async function ProductPage(props: { params?: any; productId?: number; }) {
+interface Product{
+    productId:number;
+    title:string;
+    price:number;
+    description:string;
+    category:string;
+    image:Array<String>;
+    rating:number,
+
+}
+
+export default async function ProductPage({params}:{params:{productId:string}}) {
     const {params } = props
     const {productId} = props;
 

@@ -12,8 +12,6 @@ interface Product{
 }
 
 export default async function ProductPage({params}:{params:{productId:string}}) {
-    const {params } = props
-    const {productId} = props;
 
     const getSingleProduct = async() => {
         const res = await fetch(`https://dummyjson.com/products/${params.productId}`)
